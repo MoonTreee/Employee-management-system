@@ -1,16 +1,15 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Tree
-  Date: 2017/3/13
-  Time: 22:29
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<frameset rows="80,*">
-    <frame name="top" src="${pageContext.request.contextPath}/frame/top.jsp">
-    <frameset cols="150,*" id="main">
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 
-        <frame src="${pageContext.request.contextPath}/frame/left.jsp">
-        <frame name="right" src="${pageContext.request.contextPath}/frame/right.jsp">
-    </frameset>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<frameset rows="80,*">
+   <frame name="top" src="<%=basePath %>frame/top.jsp">
+   <frameset cols="150,*" id="main">
+
+      <frame src="<%=basePath %>frame/left.jsp"> 
+     <frame name="right" src="<%=basePath %>frame/right.jsp">
+   </frameset>
 </frameset>
